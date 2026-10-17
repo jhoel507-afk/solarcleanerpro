@@ -1,0 +1,13 @@
+{
+  "appId": "com.solarcleanerpro.app",
+  "appName": "SolarCleanerPro",
+  "webDir": "www",
+  "backgroundColor": "#1f2933",
+  "android": {
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  }
+}

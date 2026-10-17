@@ -1,0 +1,7 @@
+SolarCleanerPro™
+Copyright (c) 2026 Leon Mena, Ángel Joel; Gallegos Valencia, Cristian Augusto.
+Todos los derechos reservados.
+
+Este software, sus diagramas, documentos y el nombre y logotipo SolarCleanerPro
+son propiedad de sus autores. No se permite copiar, modificar, distribuir ni usar
+comercialmente sin autorización escrita de los autores.

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="SolarCleanerPro">
+  <rect width="64" height="64" rx="8" fill="#1f2933"/>
+  <path d="M13 40 18.5 22h27L51 40z" fill="none" stroke="#e8edf2" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M22.5 22 20 40M32 22v18M41.5 22 44 40M15.8 31h32.4" stroke="#e8edf2" stroke-opacity=".55" stroke-width="1.4" fill="none"/>
+  <rect x="14" y="46" width="36" height="4" rx="1" fill="#5ea3e6"/>
+</svg>

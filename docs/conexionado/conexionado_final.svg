@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 740" width="1000" height="740" font-family="Arial,Helvetica,sans-serif">
+<rect width="1000" height="740" fill="#fff"/>
+<text x="500" y="28" text-anchor="middle" font-size="19" font-weight="700" fill="#111">Conexionado final · SolarCleanerPro™</text>
+<text x="500" y="46" text-anchor="middle" font-size="11" fill="#555">Leon Mena, Ángel Joel · Gallegos Valencia, Cristian Augusto</text>
+
+<!-- ===== 1. ALIMENTACION 220 V ===== -->
+<text x="30" y="72" font-size="12" font-weight="700" fill="#8d4a00">1. ALIMENTACIÓN 220 V (instalación por personal calificado)</text>
+<g font-size="12" text-anchor="middle" fill="#111">
+<rect x="30" y="82" width="100" height="56" rx="5" fill="#f3efe9" stroke="#111"/><text x="80" y="115">220 V AC</text>
+<rect x="165" y="82" width="100" height="56" rx="5" fill="#f3efe9" stroke="#111"/><text x="215" y="106">Fusible</text><text x="215" y="122">2 A</text>
+<rect x="300" y="82" width="130" height="56" rx="5" fill="#f3efe9" stroke="#111"/><text x="365" y="102">K2 · contacto NO</text><text x="365" y="118">IN ← GPIO5</text>
+<rect x="465" y="82" width="175" height="56" rx="5" fill="#fde8e8" stroke="#c62828" stroke-width="2"/><text x="552" y="102" font-weight="700">HONGO · contacto 2 NC</text><text x="552" y="118">potencia 10 A / 250 V</text>
+<rect x="675" y="82" width="150" height="56" rx="5" fill="#e8edf3" stroke="#111"/><text x="750" y="102" font-weight="700">Fuente ATX</text><text x="750" y="118">AcBel PC9053 · 12 V</text>
+</g>
+<g stroke="#8d4a00" stroke-width="2.5" fill="none"><path d="M130 110H165M265 110H300M430 110H465M640 110H675"/></g>
+<text x="147" y="104" font-size="10" fill="#8d4a00" text-anchor="middle">Fase</text>
+<path d="M130 152H675" stroke="#1565c0" stroke-width="2.5"/><text x="400" y="167" font-size="11" fill="#1565c0" text-anchor="middle">Neutro, directo a la fuente</text>
+<path d="M130 176H675" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6 4"/><text x="400" y="190" font-size="11" fill="#2e7d32" text-anchor="middle">Tierra (PE) a la fuente y a la caja metálica</text>
+
+<!-- ===== 2. SALIDA 12 V ===== -->
+<text x="520" y="222" font-size="12" font-weight="700" fill="#c62828">2. SALIDA DE 12 V (hasta 17 A)</text>
+<path d="M750 138V250" stroke="#c62828" stroke-width="3"/>
+<path d="M600 250H985" stroke="#c62828" stroke-width="3"/><text x="990" y="246" font-size="10" fill="#c62828" text-anchor="end">+12 V</text>
+<path d="M600 262H985" stroke="#111" stroke-width="2"/><text x="990" y="274" font-size="10" fill="#111" text-anchor="end">GND</text>
+<g font-size="11" fill="#111">
+<rect x="560" y="300" width="130" height="118" rx="5" fill="#e8f1e8" stroke="#111"/><text x="625" y="318" text-anchor="middle" font-weight="700" font-size="12">BTS7960 #1</text><text x="570" y="338">RPWM ← GPIO4</text><text x="570" y="354">LPWM ← GPIO21</text><text x="570" y="370">B+ / B− ← 12 V</text><text x="570" y="386">R_EN, L_EN ← 5 V</text><text x="570" y="402">M+ / M− → motor M1</text>
+<rect x="710" y="300" width="130" height="118" rx="5" fill="#e8f1e8" stroke="#111"/><text x="775" y="318" text-anchor="middle" font-weight="700" font-size="12">BTS7960 #2</text><text x="720" y="338">RPWM ← GPIO15</text><text x="720" y="354">LPWM ← GPIO16</text><text x="720" y="370">B+ / B− ← 12 V</text><text x="720" y="386">R_EN, L_EN ← 5 V</text><text x="720" y="402">M+ / M− → motor M2</text>
+<rect x="860" y="300" width="125" height="118" rx="5" fill="#e8f1e8" stroke="#111"/><text x="922" y="318" text-anchor="middle" font-weight="700" font-size="12">Bomba 12 V</text><text x="870" y="338">sumergible 19 W</text><text x="870" y="354">vía K1 (NO)</text><text x="870" y="370">K1 IN ← GPIO18</text><text x="870" y="386">diodo 1N4007</text><text x="870" y="402">en paralelo</text>
+</g>
+<g stroke="#c62828" stroke-width="2"><path d="M625 250V300M775 250V300M922 250V300"/></g>
+<g font-size="11" text-anchor="middle" fill="#111"><rect x="560" y="440" width="130" height="34" rx="5" fill="#fff" stroke="#111"/><text x="625" y="461">Motor M1 · PG42-775</text><rect x="710" y="440" width="130" height="34" rx="5" fill="#fff" stroke="#111"/><text x="775" y="461">Motor M2 · PG42-775</text></g>
+<path d="M625 418V440M775 418V440" stroke="#111" stroke-width="2"/>
+
+<!-- ===== 3. CONTROL 5 V ===== -->
+<text x="30" y="209" font-size="12" font-weight="700" fill="#333">3. CONTROL (5 V)</text>
+<rect x="30" y="215" width="285" height="300" rx="8" fill="#161b22" stroke="#000"/>
+<text x="172" y="240" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">ESP32-S3</text>
+<g font-size="11" fill="#e8edf2">
+<text x="44" y="268">GPIO4 / GPIO21 → BTS #1 (RPWM / LPWM)</text>
+<text x="44" y="288">GPIO15 / GPIO16 → BTS #2 (RPWM / LPWM)</text>
+<text x="44" y="308">GPIO18 → relé K1 (bomba)</text>
+<text x="44" y="328">GPIO5 → relé K2 (fuente 220 V)</text>
+<text x="44" y="348">GPIO6 ← final de carrera derecho</text>
+<text x="44" y="368">GPIO7 ← final de carrera izquierdo</text>
+<text x="44" y="388" fill="#7bd88f">GPIO10 ← pulsador de inicio (caja)</text>
+<text x="44" y="408" fill="#ff9a94">GPIO11 ← hongo, contacto 1 (caja)</text>
+<text x="44" y="428">GPIO8 SDA / GPIO9 SCL → OLED y RTC</text>
+<text x="44" y="456">5 V ← cargador   ·   GND común</text>
+<text x="44" y="476" fill="#9aa7b4" font-size="10">Entradas con INPUT_PULLUP: cada contacto va</text>
+<text x="44" y="490" fill="#9aa7b4" font-size="10">entre el GPIO y GND. Relés activos en LOW.</text>
+</g>
+<rect x="345" y="215" width="170" height="104" rx="8" fill="#f3f7e8" stroke="#111"/>
+<g font-size="11" fill="#111" text-anchor="middle"><text x="430" y="238" font-weight="700" font-size="12">Cargador 5 V / 1 A</text><text x="430" y="258">alimenta:</text><text x="430" y="274">ESP32 · relés (VCC)</text><text x="430" y="290">BTS7960 (VCC, R_EN, L_EN)</text><text x="430" y="306">OLED y RTC: 3V3 del ESP32</text></g>
+<path d="M315 267H345" stroke="#111" stroke-width="2"/>
+
+<!-- ===== 4. CAJA DE MANDO Y SENSORES ===== -->
+<text x="30" y="548" font-size="12" font-weight="700" fill="#111">4. CAJA DE MANDO Y SENSORES (cada contacto entre el GPIO indicado y GND)</text>
+<g font-size="11" text-anchor="middle" fill="#111">
+<rect x="30" y="560" width="148" height="68" rx="5" fill="#fff" stroke="#111"/><text x="104" y="580" font-weight="700">Final derecho WS1</text><text x="104" y="597">contacto NO</text><text x="104" y="613">GPIO6 ↔ GND</text>
+<rect x="188" y="560" width="148" height="68" rx="5" fill="#fff" stroke="#111"/><text x="262" y="580" font-weight="700">Final izquierdo WS1</text><text x="262" y="597">contacto NO</text><text x="262" y="613">GPIO7 ↔ GND</text>
+<rect x="346" y="560" width="148" height="68" rx="5" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/><text x="420" y="580" font-weight="700">Pulsador verde</text><text x="420" y="597">contacto NO</text><text x="420" y="613">GPIO10 ↔ GND</text>
+<rect x="504" y="560" width="148" height="68" rx="5" fill="#fde8e8" stroke="#c62828" stroke-width="2"/><text x="578" y="580" font-weight="700">Hongo · contacto 1</text><text x="578" y="597">contacto NC</text><text x="578" y="613">GPIO11 ↔ GND</text>
+<rect x="662" y="560" width="148" height="68" rx="5" fill="#fff" stroke="#111"/><text x="736" y="580" font-weight="700">OLED SSD1306</text><text x="736" y="597">dirección 0x3C</text><text x="736" y="613">SDA 8 · SCL 9</text>
+<rect x="820" y="560" width="150" height="68" rx="5" fill="#fff" stroke="#111"/><text x="895" y="580" font-weight="700">RTC DS3231</text><text x="895" y="597">dirección 0x68</text><text x="895" y="613">SDA 8 · SCL 9</text>
+</g>
+<text x="30" y="660" font-size="11" fill="#111">• Todos los GND unidos: fuente de 12 V, cargador de 5 V y ESP32.</text>
+<text x="30" y="676" font-size="11" fill="#111">• El hongo es un solo pulsador con 2 contactos NC: el 1 va a GPIO11 (avisa al ESP32) y el 2 corta la fase de la fuente.</text>
+<text x="30" y="692" font-size="11" fill="#111">• Al presionar el hongo se corta la fuente de 12 V aunque falle el programa o el WiFi; el ESP32 sigue encendido y lo avisa.</text>
+<text x="30" y="708" font-size="11" fill="#c62828">• No cortar con el hongo los cables de 12 V que van a los motores o a la bomba: solo la fase de 220 V que alimenta la fuente.</text>
+<text x="970" y="732" font-size="10" fill="#777" text-anchor="end">© 2026 Todos los derechos reservados. SolarCleanerPro™</text>
+</svg>

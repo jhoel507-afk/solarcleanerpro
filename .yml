@@ -1,0 +1,33 @@
+name: Build EXE Windows
+
+on:
+  push:
+    branches: [ main ] # Cambia "main" por tu rama si es diferente (ej. master)
+  workflow_dispatch:   # Permite activar la compilación manualmente con un botón
+
+jobs:
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Cambia la versión si tu proyecto usa otra
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Compilar y Empaquetar para Windows
+        run: npm run dist:win
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Guardar instalador de Windows (Artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: programa-windows-exe
+          path: dist/*.exe # Ajusta "dist/" si tu herramienta guarda el .exe en otra carpeta (ej. build/ o release/)
